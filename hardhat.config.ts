@@ -11,6 +11,7 @@ import CustomProvider from "./CustomProvider";
 import "./tasks/accounts";
 import "./tasks/etherscanVerify";
 import "./tasks/interactionMyConfidentialERC20";
+import "./tasks/payroll";
 import { setCodeMocked } from "./test/mockedSetup";
 
 extendProvider(async (provider) => {
@@ -43,7 +44,9 @@ function getChainConfig(chain: keyof typeof chainIds): NetworkUserConfig {
       jsonRpcUrl = "https://devnet.zama.ai";
       break;
     case "sepolia":
-      jsonRpcUrl = process.env.SEPOLIA_RPC_URL || "https://sepolia.infura.io/v3/YOUR-PROJECT-ID";
+      jsonRpcUrl =
+        process.env.SEPOLIA_RPC_URL ||
+        "https://sepolia.infura.io/v3/YOUR-PROJECT-ID";
       break;
     default:
       jsonRpcUrl = "http://localhost:8545";

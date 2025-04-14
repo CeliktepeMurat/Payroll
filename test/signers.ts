@@ -5,9 +5,7 @@ import { ACCOUNT_NAMES } from "./constants";
 
 export type AccountNames = (typeof ACCOUNT_NAMES)[number];
 
-export interface Signers {
-  [K in AccountNames]: HardhatEthersSigner;
-}
+export type Signers = Record<AccountNames, HardhatEthersSigner>;
 
 const signers: Signers = {} as Signers;
 
